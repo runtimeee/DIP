@@ -40,6 +40,16 @@ def sobel_edge_detection_manual(image_path, output_path, threshold=100):
     # 使用cv2.imwrite将边缘图像写入到输出路径
     cv2.imwrite(output_path, edge_image)
 
+
+    # 
+    # 图像相减
+    result = cv2.subtract(img, edge_image)
+
+    # 保存结果
+    cv2.imwrite('sub.png', result)
+
+
+
 if __name__ == '__main__':
     input_path = 'result_1_1.png'
     output_path = 'result_1_2.png'
